@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="page-heading">
+  <div>
+    <a href="{% url 'units' %}" class="back-link">← Unidades</a>
+    <h1>{{ unit.code }} · {{ unit.name }}</h1>
+    <p>Consulte os saldos e registre as operações desta unidade.</p>
+  </div>
+  {% if user.is_administrator %}<a class="button secondary" href="{% url 'unit_edit' unit.pk %}">Editar unidade</a>{% endif %}
+</div>
+{% if can_manage %}
+<div class="section-heading">
+  <div><h2>Alimentos acompanhados</h2><p>Configure o catálogo e o estoque mínimo desta unidade.</p></div>
+  <a class="button primary" href="{% url 'unit_food_create' unit.pk %}">＋ Acompanhar alimento</a>
+</div>
+{% endif %}
+{% if can_manage %}
+{% include 'partials/filters.html' %}
+{% else %}
+<form method="get" class="filters" role="search">
+  <div class="search-field"><label class="visually-hidden" for="search">Buscar por nome ou código</label><input type="search" id="search" name="q" value="{{ request.GET.q|default:'' }}" placeholder="Buscar alimento"></div>
+  <button class="button secondary" type="submit">Buscar</button>
+  {% if request.GET.q %}<a class="clear-filter" href="{{ request.path }}">Limpar</a>{% endif %}
+</form>
+{% endif %}
+<div class="food-grid" aria-label="Alimentos da unidade">
+  {% for item in page %}
+  <article class="food-card" id="food-{{ item.pk }}">
+    <div class="food-photo-wrap{% if not item.quantity %} out-of-stock{% endif %}">
+      {% if item.food.image_path %}
+      <img class="food-photo" src="{% static item.food.image_path %}" alt="" width="480" height="320" loading="lazy">
+      {% else %}
+      <div class="food-photo food-photo-placeholder" aria-hidden="true">🍽️</div>
+      {% endif %}
+      {% if not item.quantity %}<span class="stock-overlay">Sem estoque</span>{% endif %}
+    </div>
+    <div class="food-card-body">
+      <h2>{{ item.food.name }}</h2>
+      {% if can_manage %}<p class="food-meta">{{ item.food.category.name }} · mínimo {{ item.minimum|floatformat:"-3" }} {{ item.food.base_unit }}</p>{% endif %}
+      <div class="quantity-panel">
+        <span class="quantity-label">Quantidade</span>
+        <strong class="quantity-value">{{ item.quantity|floatformat:"-3" }} <small>{{ item.food.base_unit }}</small></strong>
+        {% if not employee_preview_unit %}<a class="button secondary movement-shortcut" href="{% url 'stock_movement_create' %}?unit={{ unit.pk }}&food={{ item.food_id }}&kind=consumption">Movimentar</a>{% endif %}
+      </div>
+      {% if can_manage %}
+      <div class="food-card-admin">{% include 'partials/status.html' with active=item.is_active %}<a href="{% url 'unit_food_edit' unit.pk item.pk %}">Editar configuração</a></div>
+      {% endif %}
+    </div>
+  </article>
+  {% empty %}
+  <div class="empty-state food-grid-empty"><h2>Nenhum alimento encontrado</h2><p>Os alimentos selecionados para esta unidade aparecerão aqui.</p></div>
+  {% endfor %}
+</div>
+{% include 'partials/pagination.html' %}
+<p class="footnote">Fotos de Wikimedia Commons e Openverse. <a href="{% static 'foods/credits.json' %}" target="_blank" rel="noopener">Créditos e licenças</a>.</p>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}{% block content %}
+<div class="page-heading"><div><a class="back-link" href="{% url 'menu_documents' %}">← Voltar</a><h1>{% if menu.week_start %}Cardápio de {{ menu.week_start|date:"d/m" }} a {{ menu.week_end|date:"d/m/Y" }}{% else %}{{ menu.original_name }}{% endif %}</h1><p>{{ menu.original_name }} · {{ menu.page_count }} página{{ menu.page_count|pluralize }}</p></div><a class="button secondary" href="{% url 'menu_document_download' menu.pk %}">Baixar PDF original</a></div>
+{% if menu.status == 'needs_review' %}<div class="notice warning"><strong>Requer conferência</strong>{% for warning in menu.warnings %}<p>{{ warning }}</p>{% endfor %}</div>{% endif %}
+<section class="menu-featured menu-detail">
+  <div class="menu-metadata"><div><span>Nutricionista</span><strong>{{ menu.nutritionist_name|default:"Não identificada" }}</strong></div><div><span>Registro</span><strong>{% if menu.nutritionist_registration %}CRN {{ menu.nutritionist_registration }}{% else %}Não identificado{% endif %}</strong></div><div><span>Enviado por</span><strong>{{ menu.created_by.display_name }}</strong></div></div>
+  {% include 'core/partials/menu_week.html' with menu_days=menu_days %}
+  {% if menu.notes %}<div class="menu-notes"><strong>Observações do cardápio</strong><p>{{ menu.notes|linebreaksbr }}</p></div>{% endif %}
+</section>
+{% endblock %}

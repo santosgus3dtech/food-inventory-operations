@@ -1,0 +1,31 @@
+name: Checks
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_DB: foodops_test_ci
+          POSTGRES_USER: foodops_ci
+          POSTGRES_PASSWORD: isolated-ci-only
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U foodops_ci -d foodops_test_ci"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL: postgresql://foodops_ci:isolated-ci-only@127.0.0.1:5432/foodops_test_ci
+      DJANGO_DEBUG: '1'
+      DJANGO_SECRET_KEY: ci-only-not-a-production-secret-abcdefghijklmnopqrstuvwxyz-123456789
+      DJANGO_ALLOWED_HOSTS: localhost,127.0.0.1,testserver
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked
+      - run: uv run ruff check .
+      - run: uv run ruff format --check .
+      - run: uv run python manage.py check
+      - run: uv run python manage.py makemigrations --check --dry-run
+      - run: uv run python manage.py collectstatic --noinput
+      - run: uv run python manage.py test

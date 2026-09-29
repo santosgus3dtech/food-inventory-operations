@@ -1,0 +1,46 @@
+{% extends 'base.html' %}{% load static %}{% block content %}
+<div class="page-heading food-detail-heading">
+  <div><a href="{% url 'foods' %}" class="back-link">← Alimentos</a><h1>{{ food.name }}</h1><p>{{ food.code }} · {{ food.category.name }} · {{ food.get_base_unit_display }}</p></div>
+  {% if food.image_path %}<img src="{% static food.image_path %}" alt="" width="180" height="120">{% endif %}
+  {% if user.is_administrator %}<a class="button secondary" href="{% url 'food_edit' food.pk %}">Editar alimento</a>{% endif %}
+</div>
+<div class="detail-strip"><span>{% include 'partials/status.html' with active=food.is_active %}</span><span>Validade nos recebimentos: <strong>{{ food.requires_expiry|yesno:"obrigatória,opcional" }}</strong></span></div>
+
+{% if price_history %}
+<section class="price-history" aria-labelledby="price-history-title">
+  <div class="section-heading compact">
+    <div><h2 id="price-history-title">Histórico de preços</h2><p>Preço do produto informado nas NF-e, convertido para {{ food.base_unit }}.</p></div>
+  </div>
+  {% if price_history.entries %}
+  <div class="price-summary" aria-label="Resumo do histórico de preços">
+    <div><span>Último preço</span><strong>R$ {{ price_history.latest_price|floatformat:2 }}</strong><small>por {{ food.base_unit }}</small></div>
+    <div><span>Menor preço</span><strong>R$ {{ price_history.minimum_price|floatformat:2 }}</strong><small>por {{ food.base_unit }}</small></div>
+    <div><span>Maior preço</span><strong>R$ {{ price_history.maximum_price|floatformat:2 }}</strong><small>por {{ food.base_unit }}</small></div>
+    <div><span>Variação no período</span><strong>{% if price_history.variation is not None %}{% if price_history.variation > 0 %}+{% endif %}{{ price_history.variation|floatformat:2 }}%{% else %}—{% endif %}</strong><small>primeiro ao último registro</small></div>
+  </div>
+  <div class="price-chart-card">
+    <div class="price-chart-heading"><div><strong>Evolução do preço por {{ food.base_unit }}</strong><span>{{ price_history.entries|length }} registro{{ price_history.entries|length|pluralize }}</span></div><div class="price-chart-key"><span><i class="confirmed"></i>Entrada confirmada</span><span><i class="review"></i>Em conferência</span></div></div>
+    <div class="price-chart-scroll" tabindex="0" aria-label="Gráfico rolável em telas pequenas">
+      <svg class="price-chart" viewBox="0 0 {{ price_history.chart.width }} {{ price_history.chart.height }}" role="img" aria-labelledby="price-chart-title price-chart-description">
+        <title id="price-chart-title">Evolução do preço de {{ food.name }}</title>
+        <desc id="price-chart-description">Preço por {{ food.base_unit }} ao longo das datas de emissão das notas fiscais. Os valores completos aparecem na tabela após o gráfico.</desc>
+        {% for tick in price_history.chart.ticks %}<line class="price-grid-line" x1="{{ price_history.chart.left }}" y1="{{ tick.y }}" x2="{{ price_history.chart.right_edge }}" y2="{{ tick.y }}"></line><text class="price-axis-label" x="{{ price_history.chart.left|add:'-10' }}" y="{{ tick.y }}" text-anchor="end" dominant-baseline="middle">R$ {{ tick.value|floatformat:2 }}</text>{% endfor %}
+        <line class="price-axis" x1="{{ price_history.chart.left }}" y1="{{ price_history.chart.top }}" x2="{{ price_history.chart.left }}" y2="{{ price_history.chart.bottom_edge }}"></line>
+        <line class="price-axis" x1="{{ price_history.chart.left }}" y1="{{ price_history.chart.bottom_edge }}" x2="{{ price_history.chart.right_edge }}" y2="{{ price_history.chart.bottom_edge }}"></line>
+        {% if price_history.chart.points|length > 1 %}<polyline class="price-line" points="{{ price_history.chart.polyline }}"></polyline>{% endif %}
+        {% for point in price_history.chart.points %}<circle class="price-point {{ point.status }}" cx="{{ point.x }}" cy="{{ point.y }}" r="6"><title>{{ point.tooltip }}</title></circle>{% if point.is_latest %}<text class="price-latest-label" x="{{ point.label_x }}" y="{{ point.label_y }}" text-anchor="{{ point.label_anchor }}">{{ point.label }}</text>{% endif %}{% endfor %}
+        {% if price_history.chart.single_date %}<text class="price-axis-label" x="380" y="264" text-anchor="middle">{{ price_history.chart.first_date|date:"d/m/Y" }}</text>{% else %}<text class="price-axis-label" x="{{ price_history.chart.left }}" y="264" text-anchor="start">{{ price_history.chart.first_date|date:"d/m/Y" }}</text><text class="price-axis-label" x="{{ price_history.chart.right_edge }}" y="264" text-anchor="end">{{ price_history.chart.last_date|date:"d/m/Y" }}</text>{% endif %}
+      </svg>
+    </div>
+  </div>
+  <div class="table-wrap price-table"><table><thead><tr><th>Emissão</th><th>NF-e</th><th>Fornecedor</th><th>Quantidade na nota</th><th>Preço na nota</th><th>Total do item</th><th>Preço por {{ food.base_unit }}</th><th>Situação</th></tr></thead><tbody>{% for entry in price_history.entries %}<tr><td class="nowrap">{{ entry.issued_at|date:"d/m/Y" }}</td><td><a href="{% url 'fiscal_document_detail' entry.document_id %}">{{ entry.number }}</a></td><td>{{ entry.supplier_name }}</td><td class="nowrap">{{ entry.commercial_quantity|floatformat:-3 }} {{ entry.commercial_unit }}</td><td class="nowrap">R$ {{ entry.commercial_unit_price|floatformat:2 }}</td><td class="nowrap">R$ {{ entry.line_total|floatformat:2 }}</td><td class="nowrap"><strong>R$ {{ entry.price_per_base_unit|floatformat:2 }}</strong></td><td><span class="document-status {{ entry.status }}">{{ entry.status_label }}</span></td></tr>{% endfor %}</tbody></table></div>
+  <p class="price-note">O preço por {{ food.base_unit }} é calculado dividindo o total do item pela quantidade convertida para o estoque. Frete, descontos e tributos que não estejam incorporados no total do item não são rateados.</p>
+  {% else %}
+  <div class="empty-state price-empty"><h3>Ainda não há histórico de preço</h3><p>O gráfico aparecerá quando uma NF-e válida tiver este alimento identificado.</p></div>
+  {% endif %}
+</section>
+{% endif %}
+
+<div class="section-heading"><div><h2>Embalagens</h2><p>O conteúdo é sempre convertido para {{ food.base_unit }}.</p></div>{% if user.is_administrator %}<a class="button primary" href="{% url 'presentation_create' food.pk %}">＋ Nova embalagem</a>{% endif %}</div>
+<div class="table-wrap"><table><thead><tr><th>Embalagem</th><th>Conteúdo</th><th>Situação</th>{% if user.is_administrator %}<th class="align-end">Ações</th>{% endif %}</tr></thead><tbody>{% for item in presentations %}<tr><td>{{ item.name }}</td><td>{{ item.base_quantity }} {{ food.base_unit }}</td><td>{% include 'partials/status.html' with active=item.is_active %}</td>{% if user.is_administrator %}<td class="align-end"><a href="{% url 'presentation_edit' food.pk item.pk %}">Editar<span class="visually-hidden"> {{ item.name }}</span></a></td>{% endif %}</tr>{% empty %}<tr><td colspan="4"><div class="empty-state"><h2>Nenhuma embalagem cadastrada</h2><p>Informe apresentações como pacote de 5 kg ou caixa com 12 unidades.</p></div></td></tr>{% endfor %}</tbody></table></div>
+{% endblock %}

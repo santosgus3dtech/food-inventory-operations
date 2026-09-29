@@ -1,0 +1,15 @@
+{% extends 'base.html' %}{% block content %}
+<div class="page-heading"><div><a class="back-link" href="{% url 'disposal_records' %}">← Voltar</a><h1>Registrar descarte</h1><p>Informe a unidade, a data, uma observação e anexe as fotos.</p></div></div>
+<form method="post" enctype="multipart/form-data" class="record-form disposal-form" novalidate>{% csrf_token %}
+  {% if form.non_field_errors %}<div class="notice error" role="alert">{{ form.non_field_errors }}</div>{% endif %}
+  <div class="form-grid">
+    <div class="field"><label for="{{ form.unit.id_for_label }}">{{ form.unit.label }} <span aria-hidden="true">*</span></label>{{ form.unit }}{% if form.unit.errors %}<div class="field-errors" role="alert">{{ form.unit.errors }}</div>{% endif %}</div>
+    <div class="field"><label for="{{ form.occurred_on.id_for_label }}">{{ form.occurred_on.label }} <span aria-hidden="true">*</span></label>{{ form.occurred_on }}{% if form.occurred_on.errors %}<div class="field-errors" role="alert">{{ form.occurred_on.errors }}</div>{% endif %}</div>
+    <div class="field span-2"><label for="{{ form.observation.id_for_label }}">{{ form.observation.label }} <span aria-hidden="true">*</span></label>{{ form.observation }}{% if form.observation.errors %}<div class="field-errors" role="alert">{{ form.observation.errors }}</div>{% endif %}</div>
+  </div>
+  <div class="upload-callout disposal-upload-callout"><span class="upload-symbol">FOTO</span><div><strong>Inclua de 1 a 8 fotos</strong><p>Formatos JPEG, PNG ou WebP. Cada foto pode ter até 8 MB.</p></div></div>
+  <div class="field"><label for="{{ form.photos.id_for_label }}">{{ form.photos.label }} <span aria-hidden="true">*</span></label>{{ form.photos }}{% if form.photos.help_text %}<div class="help-text">{{ form.photos.help_text }}</div>{% endif %}{% if form.photos.errors %}<div class="field-errors" role="alert">{{ form.photos.errors }}</div>{% endif %}</div>
+  <div class="notice"><strong>O saldo não muda nesta tela</strong><p>Se o descarte também precisar reduzir a quantidade disponível, registre uma movimentação do tipo Perda.</p></div>
+  <div class="form-actions"><button class="button primary" type="submit">Salvar descarte</button><a class="button secondary" href="{% url 'disposal_records' %}">Cancelar</a></div>
+</form>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% load static %}<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ title|default:"Entrar" }}{% endblock %} · FoodOps</title>
+  <link rel="stylesheet" href="{% static 'fonts/fonts.css' %}">
+  <link rel="stylesheet" href="{% static 'vendor/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'app.css' %}">
+</head>
+<body>
+<a class="skip-link" href="#main">Ir para o conteúdo</a>
+{% if user.is_authenticated %}
+<aside class="sidebar">
+  <a class="brand" href="{% url 'dashboard' %}"><span class="brand-mark" aria-hidden="true">FO</span><span>FoodOps</span></a>
+  {% include 'partials/navigation.html' %}
+  <div class="account"><strong>{{ user.display_name }}</strong><small>{% if employee_preview_unit %}Visualização de funcionário{% elif user.is_administrator %}Administrador geral{% else %}Acesso individual{% endif %}</small>{% if real_administrator and not employee_preview_unit %}<a href="{% url 'employee_preview' %}">Visualizar como funcionário</a>{% endif %}<a href="{% url 'password_change' %}">Alterar senha</a><form method="post" action="{% url 'logout' %}">{% csrf_token %}<button class="text-button" type="submit">Sair</button></form></div>
+</aside>
+<header class="mobile-header"><a class="brand" href="{% url 'dashboard' %}"><span class="brand-mark" aria-hidden="true">FO</span><span>FoodOps</span></a><details><summary>Menu</summary><div class="mobile-navigation">{% include 'partials/navigation.html' %}{% if real_administrator and not employee_preview_unit %}<a href="{% url 'employee_preview' %}">Visualizar como funcionário</a>{% endif %}<a href="{% url 'password_change' %}">Alterar senha</a><form method="post" action="{% url 'logout' %}">{% csrf_token %}<button class="text-button" type="submit">Sair</button></form></div></details></header>
+{% endif %}
+<main id="main" class="{% if user.is_authenticated %}workspace{% else %}public-page{% endif %}">
+  {% if employee_preview_unit %}<div class="preview-banner" role="status"><div><strong>Visualização como funcionário</strong><span>{{ employee_preview_unit.code }} — {{ employee_preview_unit.name }} · somente leitura</span></div><form method="post" action="{% url 'employee_preview_exit' %}">{% csrf_token %}<button class="button secondary" type="submit">Voltar ao modo administrador</button></form></div>{% endif %}
+  {% if user.is_authenticated %}<div class="breadcrumb-line">{% if user.is_administrator %}Administração{% else %}FoodOps{% endif %}<span>/</span>{{ title|default:"Início" }}</div>{% endif %}
+  {% if messages %}<div class="notifications" aria-live="polite">{% for message in messages %}<div class="notice {{ message.tags }}">{{ message }}</div>{% endfor %}</div>{% endif %}
+  {% block content %}{% endblock %}
+</main>
+{% block scripts %}{% endblock %}
+</body></html>

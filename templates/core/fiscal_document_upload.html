@@ -1,0 +1,10 @@
+{% extends 'base.html' %}{% block content %}
+<div class="page-heading"><div><a class="back-link" href="{% url 'fiscal_documents' %}">← Voltar</a><h1>Receber NF-e</h1><p>Envie uma ou várias notas. O estoque só será alterado após a confirmação de cada NF-e.</p></div></div>
+<form method="post" enctype="multipart/form-data" class="record-form upload-form" novalidate>{% csrf_token %}
+  {% if form.non_field_errors %}<div class="notice error" role="alert">{{ form.non_field_errors }}</div>{% endif %}
+  <div class="upload-callout"><span class="upload-symbol">XML</span><div><strong>Selecione até 20 XMLs processados</strong><p>Validaremos autorização, chave, totais e itens de cada arquivo. Cada XML pode ter até 2 MB.</p></div></div>
+  <div class="field"><label for="{{ form.xml_files.id_for_label }}">{{ form.xml_files.label }} <span aria-hidden="true">*</span></label>{{ form.xml_files }}{% if form.xml_files.help_text %}<div class="help-text">{{ form.xml_files.help_text }}</div>{% endif %}{% if form.xml_files.errors %}<div class="field-errors" role="alert">{{ form.xml_files.errors }}</div>{% endif %}</div>
+  <div class="notice"><strong>Envio não é entrada de estoque.</strong><p>Os arquivos ficarão aguardando conferência. Uma NF-e repetida será reconhecida pela chave e não será duplicada.</p></div>
+  <div class="form-actions"><button class="button primary" type="submit">Ler arquivos XML</button><a class="button secondary" href="{% url 'fiscal_documents' %}">Cancelar</a></div>
+</form>
+{% endblock %}

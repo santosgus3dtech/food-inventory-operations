@@ -1,0 +1,19 @@
+#!/bin/sh
+set -eu
+psql --set=ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" \
+  --set=app_password="$APP_DB_PASSWORD" <<'SQL'
+DO $do$
+BEGIN
+  IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname = 'foodops_app') THEN
+    CREATE ROLE foodops_app LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT;
+  END IF;
+END
+$do$;
+ALTER ROLE foodops_app PASSWORD :'app_password';
+GRANT CONNECT ON DATABASE foodops TO foodops_app;
+GRANT USAGE, CREATE ON SCHEMA public TO foodops_app;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO foodops_app;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO foodops_app;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO foodops_app;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO foodops_app;
+SQL

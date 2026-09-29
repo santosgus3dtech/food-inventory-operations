@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="page-heading dashboard-heading"><div><h1>Painel de estoque</h1><p>Acompanhe o que precisa de atenção e acesse as tarefas principais.</p></div>{% if not employee_preview_unit %}<a class="button primary" href="{% url 'stock_movement_create' %}">＋ Nova movimentação</a>{% endif %}</div>
+
+<section class="metric-grid" aria-label="Resumo do estoque">
+  <a class="metric-card" href="{% url 'units' %}"><span>Unidades visíveis</span><strong>{{ units_count }}</strong><small>Consultar unidades</small></a>
+  <a class="metric-card danger" href="{% url 'stock_alerts' %}?status=zero"><span>Itens sem estoque</span><strong>{{ zero_stock_count }}</strong><small>Ver todos os itens zerados</small></a>
+  <a class="metric-card warning" href="{% url 'stock_alerts' %}?status=low"><span>Abaixo do mínimo</span><strong>{{ low_stock_count }}</strong><small>Ver todos os itens abaixo do mínimo</small></a>
+  {% if can_import_nfe %}<a class="metric-card" href="{% url 'fiscal_documents' %}?status=review"><span>Notas pendentes</span><strong>{{ pending_documents_count }}</strong><small>Conferência ou XML pendente</small></a>{% endif %}
+  {% if pending_users_count != None %}<a class="metric-card" href="{% url 'users' %}?registration=pending"><span>Cadastros pendentes</span><strong>{{ pending_users_count }}</strong><small>Aguardando aprovação</small></a>{% endif %}
+</section>
+
+<div class="dashboard-grid">
+  <section class="dashboard-panel"><div class="section-heading compact"><div><h2>Movimentações recentes</h2><p>Últimas operações nas unidades que você pode consultar.</p></div><a href="{% url 'stock_movements' %}">Ver todas</a></div>
+    <div class="movement-list">{% for movement in recent_movements %}<a class="movement-row" href="{% url 'stock_movement_detail' movement.pk %}"><span class="movement-symbol {% if movement.kind == 'receipt' or movement.kind == 'stock_return' or movement.kind == 'adjustment_in' %}positive{% else %}negative{% endif %}" aria-hidden="true">{% if movement.kind == 'receipt' or movement.kind == 'stock_return' or movement.kind == 'adjustment_in' %}＋{% else %}−{% endif %}</span><span><strong>{{ movement.get_kind_display }}</strong><small>{{ movement.unit.code }} · {% for item in movement.items.all %}{{ item.unit_food.food.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</small></span><time datetime="{{ movement.occurred_at|date:'c' }}">{{ movement.occurred_at|date:"d/m/Y H:i" }}</time></a>{% empty %}<div class="empty-state"><h2>Nenhuma movimentação registrada</h2><p>As entradas, consumos, perdas e devoluções aparecerão aqui.</p></div>{% endfor %}</div>
+  </section>
+  <aside class="dashboard-panel quick-actions"><h2>Acessos rápidos</h2>{% if first_unit %}<a href="{% url 'unit_detail' first_unit.pk %}">Consultar estoque</a>{% endif %}{% if not employee_preview_unit %}<a href="{% url 'stock_movement_create' %}">Registrar movimentação</a>{% endif %}{% if can_import_nfe %}<a href="{% url 'fiscal_document_upload' %}">Receber XML de NF-e</a><a href="{% url 'fiscal_pdf_upload' %}">Receber PDF do DANFE</a>{% endif %}{% if user.is_administrator %}<a href="{% url 'users' %}">Gerenciar usuários</a>{% endif %}</aside>
+</div>
+{% endblock %}

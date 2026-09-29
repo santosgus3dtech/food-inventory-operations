@@ -1,0 +1,18 @@
+<nav class="app-nav" aria-label="Navegação principal">
+  <a href="{% url 'dashboard' %}" {% if current_page == 'dashboard' or current_page == 'home' %}class="selected" aria-current="page"{% endif %}>{% include 'partials/icon.html' with icon='dashboard' %}Painel</a>
+  <a href="{% url 'units' %}" {% if current_page == 'units' or 'unit_' in current_page %}class="selected" aria-current="page"{% endif %}>{% include 'partials/icon.html' with icon='units' %}{% if user.is_administrator %}Unidades{% else %}Estoque{% endif %}</a>
+  {% if user.is_administrator %}
+  <a href="{% url 'foods' %}" {% if current_page == 'foods' or 'food_' in current_page or 'presentation_' in current_page %}class="selected" aria-current="page"{% endif %}>{% include 'partials/icon.html' with icon='food' %}Alimentos</a>
+  <a href="{% url 'pnae_catalog' %}" {% if current_page == 'pnae_catalog' %}class="selected" aria-current="page"{% endif %}>{% include 'partials/icon.html' with icon='invoice' %}Catálogo PNAE</a>
+  {% endif %}
+  <a href="{% url 'stock_movements' %}" {% if 'stock_movement' in current_page %}class="selected" aria-current="page"{% endif %}>{% include 'partials/icon.html' with icon='movement' %}Movimentações</a>
+  <a href="{% url 'disposal_records' %}" {% if 'disposal_' in current_page %}class="selected" aria-current="page"{% endif %}>{% include 'partials/icon.html' with icon='disposal' %}Descarte</a>
+  <a href="{% url 'menu_documents' %}" {% if 'menu_document' in current_page %}class="selected" aria-current="page"{% endif %}>{% include 'partials/icon.html' with icon='menu' %}Cardápio</a>
+  {% if can_import_nfe %}<a href="{% url 'fiscal_documents' %}" {% if 'fiscal_' in current_page %}class="selected" aria-current="page"{% endif %}>{% include 'partials/icon.html' with icon='invoice' %}Notas fiscais</a>{% endif %}
+  {% if user.is_administrator %}
+  <a href="{% url 'categories' %}" {% if current_page == 'categories' or 'category_' in current_page %}class="selected" aria-current="page"{% endif %}>{% include 'partials/icon.html' with icon='category' %}Categorias</a>
+  <a href="{% url 'users' %}" {% if current_page == 'users' or 'user_' in current_page or 'access_' in current_page %}class="selected" aria-current="page"{% endif %}>{% include 'partials/icon.html' with icon='users' %}Usuários</a>
+  <a href="{% url 'product_updates' %}" {% if current_page == 'product_updates' %}class="selected" aria-current="page"{% endif %}>{% include 'partials/icon.html' with icon='updates' %}Atualizações</a>
+  {% endif %}
+  <a href="{% url 'audit' %}" {% if 'audit' in current_page %}class="selected" aria-current="page"{% endif %}>{% include 'partials/icon.html' with icon='audit' %}Auditoria</a>
+</nav>

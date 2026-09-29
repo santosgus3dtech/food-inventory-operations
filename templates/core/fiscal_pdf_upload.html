@@ -1,0 +1,10 @@
+{% extends 'base.html' %}{% block content %}
+<div class="page-heading"><div><a class="back-link" href="{% url 'fiscal_documents' %}">← Voltar</a><h1>Receber PDF</h1><p>Envie um ou vários DANFEs para vinculá-los às NF-e pelas chaves de acesso.</p></div></div>
+<form method="post" enctype="multipart/form-data" class="record-form upload-form" novalidate>{% csrf_token %}
+  {% if form.non_field_errors %}<div class="notice error" role="alert">{{ form.non_field_errors }}</div>{% endif %}
+  <div class="upload-callout"><span class="upload-symbol">PDF</span><div><strong>Selecione até 20 PDFs de DANFE</strong><p>Validaremos cada documento e sua chave de acesso. Cada PDF pode ter até 10 MB e 20 páginas.</p></div></div>
+  <div class="field"><label for="{{ form.pdf_files.id_for_label }}">{{ form.pdf_files.label }} <span aria-hidden="true">*</span></label>{{ form.pdf_files }}{% if form.pdf_files.help_text %}<div class="help-text">{{ form.pdf_files.help_text }}</div>{% endif %}{% if form.pdf_files.errors %}<div class="field-errors" role="alert">{{ form.pdf_files.errors }}</div>{% endif %}</div>
+  <div class="notice"><strong>Por que o XML ainda pode ser necessário?</strong><p>O DANFE é a representação visual da nota. O XML autorizado contém os itens estruturados, o protocolo e a assinatura usados na conferência do estoque. Se o próprio PDF trouxer esse XML embutido, o sistema fará o vínculo automaticamente.</p></div>
+  <div class="form-actions"><button class="button primary" type="submit">Receber e verificar PDFs</button><a class="button secondary" href="{% url 'fiscal_documents' %}">Cancelar</a></div>
+</form>
+{% endblock %}

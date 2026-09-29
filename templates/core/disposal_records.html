@@ -1,0 +1,18 @@
+{% extends 'base.html' %}{% block content %}
+<div class="page-heading"><div><h1>Descarte</h1><p>Registre fotos e observações para documentar os descartes realizados nas unidades.</p></div><a class="button primary" href="{% url 'disposal_record_create' %}">＋ Registrar descarte</a></div>
+<div class="notice disposal-notice"><strong>Registro fotográfico</strong><p>Esta área guarda a evidência do descarte. As quantidades do estoque continuam sendo baixadas em Movimentações.</p></div>
+{% if units|length > 1 %}<form method="get" class="filters" aria-label="Filtrar descartes"><label class="visually-hidden" for="unit">Unidade</label><select name="unit" id="unit"><option value="">Todas as unidades</option>{% for unit in units %}<option value="{{ unit.pk }}" {% if request.GET.unit == unit.pk|stringformat:'s' %}selected{% endif %}>{{ unit.code }} — {{ unit.name }}</option>{% endfor %}</select><button class="button secondary" type="submit">Filtrar</button></form>{% endif %}
+<div class="disposal-grid">
+  {% for record in page %}
+  <article class="disposal-card">
+    <a class="disposal-card-photo" href="{% url 'disposal_record_detail' record.pk %}">
+      {% for photo in record.photos.all %}{% if forloop.first %}<img src="{% url 'disposal_photo' record.pk photo.pk %}" alt="Foto do descarte na unidade {{ record.unit.code }}" loading="lazy">{% endif %}{% endfor %}
+    </a>
+    <div class="disposal-card-body"><div class="disposal-card-meta"><span>{{ record.unit.code }}</span><time datetime="{{ record.occurred_on|date:'Y-m-d' }}">{{ record.occurred_on|date:"d/m/Y" }}</time></div><p>{{ record.observation|truncatechars:150 }}</p><small>{{ record.photos.all|length }} foto{{ record.photos.all|length|pluralize }} · {{ record.created_by.display_name }}</small><a href="{% url 'disposal_record_detail' record.pk %}">Abrir registro</a></div>
+  </article>
+  {% empty %}
+  <div class="empty-state disposal-empty"><div class="empty-symbol">{% include 'partials/icon.html' with icon='disposal' %}</div><h2>Nenhum descarte registrado</h2><p>Adicione as fotos e uma observação para criar o primeiro registro.</p><a class="button primary" href="{% url 'disposal_record_create' %}">＋ Registrar descarte</a></div>
+  {% endfor %}
+</div>
+{% include 'partials/pagination.html' %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% if menu_days %}
+<div class="menu-week-grid" aria-label="Refeições da semana">
+  {% for day in menu_days %}
+  <article class="menu-day-card">
+    <header><strong>{{ day.weekday }}</strong><time datetime="{{ day.date|date:'Y-m-d' }}">{{ day.date|date:"d/m" }}</time></header>
+    <div class="menu-day-meals">
+      {% for meal in day.meals %}
+        {% if meal %}<div class="menu-meal menu-meal-{{ meal.meal_type }}"><span>{{ meal.get_meal_type_display }}</span><p>{{ meal.description|linebreaksbr }}</p></div>{% endif %}
+      {% endfor %}
+    </div>
+  </article>
+  {% endfor %}
+</div>
+{% else %}
+<div class="menu-review-empty"><strong>Refeições ainda não extraídas</strong><p>O PDF está guardado e pode ser consultado enquanto o formato é conferido.</p></div>
+{% endif %}

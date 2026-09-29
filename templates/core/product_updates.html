@@ -1,0 +1,14 @@
+{% extends 'base.html' %}{% block content %}
+<div class="page-heading updates-heading"><div><h1>Atualizações</h1><p>Veja, em linguagem simples, o que já mudou no Estoque FOODOPS.</p></div><span class="updates-admin-label">Somente administradores</span></div>
+
+<section class="updates-intro" aria-label="Sobre esta página"><div class="updates-intro-icon" aria-hidden="true">✓</div><div><h2>Novidades sem termos técnicos</h2><p>As atualizações mais recentes aparecem primeiro. Cada bloco explica o que foi entregue e como isso ajuda no dia a dia.</p></div></section>
+
+<div class="updates-list">
+{% for update in updates %}
+<article class="update-card update-card-{{ update.tone }}">
+  <div class="update-meta"><time datetime="{{ update.published_on|date:'Y-m-d' }}">{{ update.published_on|date:"d/m/Y" }}</time><span class="update-label">{{ update.label }}</span></div>
+  <div class="update-content"><h2>{{ update.title }}</h2><p class="update-summary">{{ update.summary }}</p><ul>{% for item in update.items %}<li>{{ item }}</li>{% endfor %}</ul><p class="update-impact"><strong>Na prática:</strong> {{ update.impact }}</p></div>
+</article>
+{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,6 @@
+<form method="get" class="filters" role="search">
+<div class="search-field"><label class="visually-hidden" for="search">Buscar por nome ou código</label><input type="search" id="search" name="q" value="{{ request.GET.q|default:'' }}" placeholder="Buscar por nome ou código"></div>
+<label class="visually-hidden" for="status">Situação</label><select name="status" id="status"><option value="">Todas as situações</option><option value="active" {% if request.GET.status == 'active' %}selected{% endif %}>Ativos</option><option value="inactive" {% if request.GET.status == 'inactive' %}selected{% endif %}>Inativos</option></select>
+<button class="button secondary" type="submit">Filtrar</button>
+{% if request.GET.q or request.GET.status %}<a class="clear-filter" href="{{ request.path }}">Limpar</a>{% endif %}
+</form>

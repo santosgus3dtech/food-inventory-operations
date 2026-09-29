@@ -1,0 +1,60 @@
+{% extends 'base.html' %}{% block content %}
+<div class="page-heading"><div><h1>Cardápio</h1><p>Monte a semana escolhendo os pratos disponíveis para cada refeição.</p></div>{% if user.is_administrator %}<a class="button primary" href="{% url 'menu_document_upload' %}">＋ Enviar cardápio</a>{% endif %}</div>
+
+<section class="menu-planner" id="planejamento">
+  <div class="menu-planner-heading">
+    <div><span class="menu-kicker">Planejamento semanal</span><h2>{{ menu_plan.week_start|date:"d/m/Y" }} a {{ menu_plan.week_end|date:"d/m/Y" }}</h2><p>A tabela começa vazia. Adicione um prato em cada refeição conforme o planejamento da semana.</p></div>
+    <nav class="menu-week-navigation" aria-label="Escolher semana"><a class="button secondary" href="?semana={{ menu_plan.previous_week|date:'Y-m-d' }}#planejamento">← Semana anterior</a><a class="button secondary" href="?semana={{ menu_plan.next_week|date:'Y-m-d' }}#planejamento">Próxima semana →</a></nav>
+  </div>
+  <div class="menu-plan-table-wrap">
+    <table class="menu-plan-table">
+      <thead><tr><th scope="col">Refeição</th>{% for day in menu_plan.days %}<th scope="col"><strong>{{ day.weekday }}</strong><time datetime="{{ day.date|date:'Y-m-d' }}">{{ day.date|date:"d/m" }}</time></th>{% endfor %}</tr></thead>
+      <tbody>
+      {% for row in menu_plan.rows %}
+        <tr><th scope="row">{{ row.label }}</th>
+        {% for cell in row.cells %}
+          <td class="menu-plan-cell {% if cell.item %}is-filled{% else %}is-empty{% endif %}">
+            {% if cell.item %}<p>{{ cell.item.description|linebreaksbr }}</p><small>Atualizado por {{ cell.item.updated_by.display_name }}</small>{% else %}<span class="menu-plan-empty">Em branco</span>{% endif %}
+            {% if user.is_administrator %}
+              {% if cell.options %}
+              <details class="menu-plan-picker"><summary>{% if cell.item %}Trocar prato{% else %}＋ Adicionar prato{% endif %}</summary>
+                <form method="post" action="{% url 'weekly_menu_item_save' %}">{% csrf_token %}<input type="hidden" name="week_start" value="{{ menu_plan.week_start|date:'Y-m-d' }}"><input type="hidden" name="service_date" value="{{ cell.date|date:'Y-m-d' }}"><input type="hidden" name="meal_type" value="{{ row.meal_type }}"><label class="visually-hidden" for="dish-{{ row.meal_type }}-{{ cell.date|date:'Ymd' }}">Prato para {{ row.label }} de {{ cell.date|date:'d/m' }}</label><select id="dish-{{ row.meal_type }}-{{ cell.date|date:'Ymd' }}" name="source_meal" required><option value="">Selecione uma opção</option>{% for option in cell.options %}<option value="{{ option.source_meal_id }}" {% if cell.item.source_meal_id == option.source_meal_id %}selected{% endif %}>{{ option.display }}</option>{% endfor %}</select><button class="button primary compact" type="submit">Salvar prato</button></form>
+              </details>
+              {% else %}<small class="menu-plan-no-options">Envie um PDF com opções para esta refeição.</small>{% endif %}
+              {% if cell.item %}<form method="post" action="{% url 'weekly_menu_item_delete' cell.item.pk %}" class="menu-plan-remove">{% csrf_token %}<button type="submit">Remover</button></form>{% endif %}
+            {% endif %}
+          </td>
+        {% endfor %}
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% if not user.is_administrator %}<p class="menu-planner-help">Os administradores montam o cardápio. A equipe pode consultar os pratos definidos nesta tabela.</p>{% endif %}
+</section>
+
+<section class="menu-options-section" aria-labelledby="menu-options-title">
+  <div class="section-heading"><div><h2 id="menu-options-title">Opções de pratos</h2><p>As opções abaixo foram reunidas a partir dos cardápios enviados em PDF.</p></div></div>
+  <div class="menu-options-grid">
+  {% for group in dish_groups %}
+    <article class="menu-options-card menu-options-{{ group.meal_type }}"><h3>{{ group.label }}</h3>{% if group.options %}<ul>{% for option in group.options %}<li>{{ option.description|linebreaksbr }}</li>{% endfor %}</ul>{% else %}<p>Nenhuma opção encontrada.</p>{% endif %}</article>
+  {% endfor %}
+  </div>
+</section>
+
+{% if current_menu %}
+<section class="menu-featured menu-reference">
+  <div class="menu-featured-heading">
+    <div><span class="menu-kicker">Referência mais recente</span><h2>{% if current_menu.week_start %}{{ current_menu.week_start|date:"d/m/Y" }} a {{ current_menu.week_end|date:"d/m/Y" }}{% else %}{{ current_menu.original_name }}{% endif %}</h2><p>{% if current_menu.nutritionist_name %}Nutricionista {{ current_menu.nutritionist_name }}{% if current_menu.nutritionist_registration %} · CRN {{ current_menu.nutritionist_registration }}{% endif %}{% else %}Enviado por {{ current_menu.created_by.display_name }}{% endif %}</p></div>
+    <div class="button-group"><a class="button secondary" href="{% url 'menu_document_download' current_menu.pk %}">Baixar PDF original</a><a class="button secondary" href="{% url 'menu_document_detail' current_menu.pk %}">Abrir detalhes</a></div>
+  </div>
+  {% if current_menu.status == 'needs_review' %}<div class="notice warning"><strong>Requer conferência</strong><p>O arquivo foi guardado, mas parte da estrutura não pôde ser identificada automaticamente.</p></div>{% endif %}
+  {% include 'core/partials/menu_week.html' with menu_days=menu_days %}
+  {% if current_menu.notes %}<div class="menu-notes"><strong>Observações do cardápio</strong><p>{{ current_menu.notes|linebreaksbr }}</p></div>{% endif %}
+</section>
+{% else %}
+<div class="empty-state"><div class="empty-symbol">{% include 'partials/icon.html' with icon='menu' %}</div><h2>Nenhum cardápio enviado</h2><p>Envie um PDF para criar a lista de opções de pratos.</p>{% if user.is_administrator %}<a class="button primary" href="{% url 'menu_document_upload' %}">＋ Enviar cardápio</a>{% endif %}</div>
+{% endif %}
+
+{% if page.object_list %}<section class="dashboard-panel menu-archive"><div class="section-heading"><div><h2>Outras semanas</h2><p>Histórico de cardápios já enviados.</p></div></div><div class="table-wrap"><table><thead><tr><th>Período</th><th>Arquivo</th><th>Refeições</th><th>Situação</th><th class="align-end">Ações</th></tr></thead><tbody>{% for menu in page %}<tr><td class="nowrap">{% if menu.week_start %}{{ menu.week_start|date:"d/m/Y" }} a {{ menu.week_end|date:"d/m/Y" }}{% else %}Não identificado{% endif %}</td><td>{{ menu.original_name }}<br><small>Enviado em {{ menu.created_at|date:"d/m/Y H:i" }}</small></td><td>{{ menu.meals.all|length }} referências</td><td><span class="document-status {{ menu.status }}">{{ menu.get_status_display }}</span></td><td class="align-end"><a href="{% url 'menu_document_detail' menu.pk %}">Abrir</a></td></tr>{% endfor %}</tbody></table></div></section>{% include 'partials/pagination.html' %}{% endif %}
+{% endblock %}

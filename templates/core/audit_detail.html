@@ -1,0 +1,6 @@
+{% extends 'base.html' %}{% block content %}
+<div class="page-heading"><div><a class="back-link" href="{% url 'audit' %}">← Auditoria</a><h1>Detalhe da alteração</h1><p>{{ event.description }}</p></div></div>
+<dl class="metadata"><div><dt>Responsável</dt><dd>{{ event.actor_name }}</dd></div><div><dt>Registrado em</dt><dd>{{ event.created_at|date:"d/m/Y H:i:s" }}</dd></div><div><dt>Unidade</dt><dd>{{ event.unit.name|default:"Geral" }}</dd></div></dl>
+<div class="table-wrap"><table><thead><tr><th>Campo</th><th>Antes</th><th>Depois</th></tr></thead><tbody>{% for change in changes %}<tr><td>{{ change.field }}</td><td class="audit-value">{{ change.before }}</td><td class="audit-value">{{ change.after }}</td></tr>{% empty %}<tr><td colspan="3">Evento registrado sem conteúdo de senha ou outros dados sensíveis.</td></tr>{% endfor %}</tbody></table></div>
+<p class="footnote">Este registro é preservado e não pode ser editado.</p>
+{% endblock %}

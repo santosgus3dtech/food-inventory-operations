@@ -1,0 +1,978 @@
+[
+  {
+    "food": "Abacate",
+    "file": "abacate.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Avocado_Hass_-_single_and_halved.jpg",
+    "artist": "Ivar Leidus",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "food": "Abacaxi",
+    "file": "abacaxi.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Ananas!.jpg",
+    "artist": "Deise Garrido",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "food": "Abobrinha",
+    "file": "abobrinha.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Courgette_Cucurbita_pepo.jpg",
+    "artist": "Rasbak",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "food": "Abóbora",
+    "file": "abobora.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Pumpkins.jpg",
+    "artist": "Martin Doege (Morn), uploaded to English WP on 2003-08-21",
+    "license": "GFDL 1.2",
+    "license_url": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html"
+  },
+  {
+    "food": "Achocolatado",
+    "file": "achocolatado.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Cocoa_powder.jpg",
+    "artist": "blair",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "food": "Agrião",
+    "file": "agriao.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Nasturtium_lvs.jpg",
+    "artist": "",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "food": "Aipim",
+    "file": "aipim.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Harvested_cassava_roots_02.jpg",
+    "artist": "Denis kasozi",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "food": "Alface",
+    "file": "alface.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Iceberg_lettuce_in_SB.jpg",
+    "artist": "en:User:Geographer",
+    "license": "CC BY 1.0",
+    "license_url": "https://creativecommons.org/licenses/by/1.0"
+  },
+  {
+    "food": "Alho",
+    "file": "alho.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Garlic.jpg",
+    "artist": "Donovan Govan.",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "food": "Amido de Milho",
+    "file": "amido-de-milho.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Corn_Starch.JPG",
+    "artist": "Miansari66",
+    "license": "Public domain",
+    "license_url": ""
+  },
+  {
+    "food": "Arroz Branco",
+    "file": "arroz-branco.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Half_a_cup_of_rice._Brown_rice_is_the_best_choice.JPG",
+    "artist": "Hannahdownes",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "food": "Arroz Integral",
+    "file": "arroz-integral.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Brownrice.jpg",
+    "artist": "Dan McKay",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "food": "Atum em lata",
+    "file": "atum-em-lata.webp",
+    "source_page": "https://www.flickr.com/photos/93839835@N04/53411302463",
+    "artist": "eamathe",
+    "license": "BY",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/"
+  },
+  {
+    "food": "Aveia 200g",
+    "file": "aveia-200g.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Oatmeal.jpg",
+    "artist": "Bill Ebbesen",
+    "license": "Copyrighted free use",
+    "license_url": ""
+  },
+  {
+    "food": "Açafrão em pó",
+    "file": "acafrao-em-po.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Crocus_sativus2.jpg",
+    "artist": "KENPEI",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "food": "Açúcar",
+    "file": "acucar.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Sucre_blanc_cassonade_complet_rapadura.jpg",
+    "artist": "Romain Behar",
+    "license": "Public domain",
+    "license_url": ""
+  },
+  {
+    "food": "Banana",
+    "file": "banana.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Bananas_(Alabama_Extension).jpg",
+    "artist": "Alabama Extension",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  {
+    "food": "Batata",
+    "file": "batata.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Batata.JPG",
+    "artist": "WOtP",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "food": "Batata Doce",
+    "file": "batata-doce.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Batata-doce,_ou_jetica_(do_tupi_%C3%AEetyka).jpg",
+    "artist": "Bageense",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "food": "Batata Palha",
+    "file": "batata-palha.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Batata_palha.jpg",
+    "artist": "Fabio azevedo",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "food": "Beringela",
+    "file": "beringela.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Solanum_melongena_24_08_2012_(1).JPG",
+    "artist": "Joydeep",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "food": "Beterraba",
+    "file": "beterraba.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Beets-Bundle.jpg",
+    "artist": "Evan-Amos",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  {
+    "food": "Biscoito Cream Cracker",
+    "file": "biscoito-cream-cracker.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Crumbl_Cookies_-_January_2025_-_Sarah_Stierch.jpg",
+    "artist": "Missvain",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  {
+    "food": "Biscoito Maisena",
+    "file": "biscoito-maisena.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Galleta_Mar%C3%ADa.jpg",
+    "artist": "Diádoco, Bucephala",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "food": "Biscoito Rosquinha",
+    "file": "biscoito-rosquinha.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Crumbl_Cookies_-_January_2025_-_Sarah_Stierch.jpg",
+    "artist": "Missvain",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  {
+    "food": "Biscoito de Leite",
+    "file": "biscoito-de-leite.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Crumbl_Cookies_-_January_2025_-_Sarah_Stierch.jpg",
+    "artist": "Missvain",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  {
+    "food": "Brócolis",
+    "file": "brocolis.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Broccoli_and_cross_section_edit.jpg",
+    "artist": "Fir0002",
+    "license": "GFDL 1.2",
+    "license_url": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html"
+  },
+  {
+    "food": "Café 500g",
+    "file": "cafe-500g.webp",
+    "source_page": "https://www.flickr.com/photos/195403219@N08/52138953203",
+    "artist": "markolaz",
+    "license": "BY",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/"
+  },
+  {
+    "food": "Canela em Pó",
+    "file": "canela-em-po.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Cinnamomum_verum_spices.jpg",
+    "artist": "Simon A. Eugster",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "food": "Canjica 500g",
+    "file": "canjica-500g.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:%D0%9A%D1%83%D0%BA%D1%83%D1%80%D1%83%D0%B7%D0%B02.jpg",
+    "artist": "Loyna",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "food": "Caqui",
+    "file": "caqui.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Persimmon-oliv1.jpg",
+    "artist": "No machine-readable author provided. Olegivvit assumed (based on copyright claims).",
+    "license": "CC BY-SA 2.5",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.5"
+  },
+  {
+    "food": "Carne Bovina",
+    "file": "carne-bovina.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Standing-rib-roast.jpg",
+    "artist": "Michael C. Berch, aka MCB at en.wikipedia",
+    "license": "CC BY-SA 2.5",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.5"
+  },
+  {
+    "food": "Carne Moída",
+    "file": "carne-moida.webp",
+    "source_page": "https://www.rawpixel.com/image/5928095/photo-image-background-public-domain-kitchen",
+    "artist": "",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "food": "Catchup",
+    "file": "catchup.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Different_ketchup_in_a_plate_122425.jpg",
+    "artist": "Rameshng",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "food": "Cebola",
+    "file": "cebola.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Onion_2.JPG",
+    "artist": "No machine-readable author provided. OsvaldoGago assumed (based on copyright claims).",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "food": "Cenoura",
+    "file": "cenoura.webp",
+    "source_page": "https://stocksnap.io/photo/carrots-vegetable-KCSC4LAXLZ",
+    "artist": "FOCA Stock",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "food": "Champignon",
+    "file": "champignon.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:ChampignonMushroom.jpg",
+    "artist": "chris_73",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "food": "Cheiro Verde",
+    "file": "cheiro-verde.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Starr_020911-9003_Petroselinum_crispum.jpg",
+    "artist": "Forest & Kim Starr",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0"
+  },
+  {
+    "food": "Chocolate em pó 70%",
+    "file": "chocolate-em-po-70.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Cocoa_powder.jpg",
+    "artist": "blair",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "food": "Chuchu",
+    "file": "chuchu.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Chayote_cross_section_BNC.jpg",
+    "artist": "Prathyush Thomas",
+    "license": "GFDL 1.2",
+    "license_url": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html"
+  },
+  {
+    "food": "Coco Ralado 100g",
+    "file": "coco-ralado-100g.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Coco_rallado.jpg",
+    "artist": "Copiapino HD",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "food": "Coentro",
+    "file": "coentro.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Coriander_Leaves.jpg",
+    "artist": "Rupeshm364",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "food": "Couve",
+    "file": "couve.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Cabbage.jpg",
+    "artist": "Bill Tarpenning",
+    "license": "Public domain",
+    "license_url": ""
+  },
+  {
+    "food": "Couve-Flor",
+    "file": "couve-flor.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Bloemkool.jpg",
+    "artist": "Rasbak",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "food": "Cravo 30g",
+    "file": "cravo-30g.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Gewuerznelken.jpg",
+    "artist": "Rainer Zenz",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "food": "Creme de Leite",
+    "file": "creme-de-leite.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Milk-bottle.jpg",
+    "artist": "FiveRings (talk)",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0"
+  },
+  {
+    "food": "Creme de Ricota",
+    "file": "creme-de-ricota.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Ricotta.jpeg",
+    "artist": "Paoletta S.",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "food": "Danone",
+    "file": "danone.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Joghurt.jpg",
+    "artist": "No machine-readable author provided. Rainer Zenz assumed (based on copyright claims).",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "food": "Doce de Leite",
+    "file": "doce-de-leite.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:DulceDeLecheEnUnaBotella.jpg",
+    "artist": "Kei Hendry from London, England",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "food": "Ervilha em lata",
+    "file": "ervilha-em-lata.webp",
+    "source_page": "https://www.flickr.com/photos/19779889@N00/51992696621",
+    "artist": "arbyreed",
+    "license": "BY-NC-SA",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/"
+  },
+  {
+    "food": "Ervilha para Sopa",
+    "file": "ervilha-para-sopa.webp",
+    "source_page": "https://www.flickr.com/photos/19779889@N00/51992696621",
+    "artist": "arbyreed",
+    "license": "BY-NC-SA",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/"
+  },
+  {
+    "food": "Espinafre",
+    "file": "espinafre.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Spinach_leaves.jpg",
+    "artist": "Nillerdk",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0"
+  },
+  {
+    "food": "Extrato de Tomate 300g",
+    "file": "extrato-de-tomate-300g.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Tomato_paste_on_spoon.jpg",
+    "artist": "SKopp",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "food": "Farinha de Mandioca",
+    "file": "farinha-de-mandioca.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:FARINHA_DE_MANDIOCA,_EM_CESTO_DE_PALHA_DE_CARNA%C3%9ABA_-_panoramio.jpg",
+    "artist": "MACÍLIO GOMES",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0"
+  },
+  {
+    "food": "Farinha de Trigo",
+    "file": "farinha-de-trigo.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:All-Purpose_Flour_(4107895947).jpg",
+    "artist": "Veganbaking.net from USA",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "food": "Farinha de Trigo Integral",
+    "file": "farinha-de-trigo-integral.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Whole_wheat_grain_flour_being_scooped.jpg",
+    "artist": "Margaret Hoogstrate",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0"
+  },
+  {
+    "food": "Feijão Carioca",
+    "file": "feijao-carioca.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Feij%C3%A3o_Paulista.jpg",
+    "artist": "Agent010",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "food": "Feijão Preto",
+    "file": "feijao-preto.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Black_Beans_2.JPG",
+    "artist": "Wilfredor",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "food": "Fermento de Pó Químico",
+    "file": "fermento-de-po-quimico.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Backpulver.jpg",
+    "artist": "",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "food": "File de Peito de Frango",
+    "file": "file-de-peito-de-frango.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Chicken_breasts_and_wing_quarters.jpg",
+    "artist": "Harald the Bard",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  {
+    "food": "File de Peixe",
+    "file": "file-de-peixe.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Basa_fish_-_Vinh_Long_Market.jpg",
+    "artist": "Alpha",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "food": "Folha de Louro",
+    "file": "folha-de-louro.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Bay_Leaves.JPG",
+    "artist": "Miansari66",
+    "license": "Public domain",
+    "license_url": ""
+  },
+  {
+    "food": "Fubá",
+    "file": "fuba.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Polenta_uncooked.jpg",
+    "artist": "Popo le Chien",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "food": "Fígado",
+    "file": "figado.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Leber_Schaf.jpg",
+    "artist": "de:Benutzer:Uwe Gille",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "food": "Goiaba",
+    "file": "goiaba.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Goiaba_vermelha.jpg",
+    "artist": "Rodrigo.Argenton",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "food": "Goiabada",
+    "file": "goiabada.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Goiabada_slice.jpg",
+    "artist": "Voton",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "food": "Guaraná Natural 1L",
+    "file": "guarana-natural-1l.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Flickr_-_ggallice_-_Guarana_(1).jpg",
+    "artist": "Geoff Gallice from Gainesville, FL, USA",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "food": "Inhame",
+    "file": "inhame.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:YamsatBrixtonMarket.jpg",
+    "artist": "",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "food": "Laranja",
+    "file": "laranja.webp",
+    "source_page": "https://www.rawpixel.com/image/5970515/fresh-oranges-fruit",
+    "artist": "",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "food": "Leite de Coco 500ml",
+    "file": "leite-de-coco-500ml.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Cononut_milk.JPG",
+    "artist": "S Sepp",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "food": "Leite em Pó Instantâneo 400g",
+    "file": "leite-em-po-instantaneo-400g.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:PowderedMilk.jpg",
+    "artist": "",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "food": "Lentilha",
+    "file": "lentilha.webp",
+    "source_page": "https://www.flickr.com/photos/8514720@N04/50881647186",
+    "artist": "fred_v",
+    "license": "BY",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/"
+  },
+  {
+    "food": "Limão",
+    "file": "limao.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Lemon_-_whole_and_split.jpg",
+    "artist": "Ivar Leidus",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "food": "Macarrão Espaguete",
+    "file": "macarrao-espaguete.webp",
+    "source_page": "https://www.rawpixel.com/image/6020243/photo-image-public-domain-food-free",
+    "artist": "",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "food": "Macarrão Farfalle",
+    "file": "macarrao-farfalle.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Farfalle_with_arugula_and_sun_dried_tomatoes_in_a_white_wine_garlic_sauce_%E3%83%AB%E3%83%83%E3%82%B3%E3%83%A9%E3%81%A8%E3%82%B5%E3%83%B3%E3%83%89%E3%83%A9%E3%82%A4%E3%83%89%E3%83%88%E3%83%9E%E3%83%88%E3%81%AE%E3%83%95%E3%82%A1%E3%83%AB%E3%83%95%E3%82%A1%E3%83%83%E3%83%AC%E3%80%81%E7%99%BD%E3%83%AF%E3%82%A4%E3%83%B3%E3%83%8B%E3%83%B3%E3%83%8B%E3%82%AF%E3%82%BD%E3%83%BC%E3%82%B9.jpg",
+    "artist": "naotakem",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "food": "Macarrão Parafuso",
+    "file": "macarrao-parafuso.webp",
+    "source_page": "https://www.rawpixel.com/image/6034336/fusilli-pasta-free-public-domain-cc0-photo",
+    "artist": "",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "food": "Mamão Formosa",
+    "file": "mamao-formosa.webp",
+    "source_page": "https://stocksnap.io/photo/fruit-papaya-3SWC1TTVYS",
+    "artist": "Joe deSousa",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "food": "Manga",
+    "file": "manga.webp",
+    "source_page": "https://www.rawpixel.com/image/6035201/photo-image-background-public-domain-leaf",
+    "artist": "",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "food": "Manteiga 200g",
+    "file": "manteiga-200g.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Butter_block.JPG",
+    "artist": "Meanos",
+    "license": "Public domain",
+    "license_url": ""
+  },
+  {
+    "food": "Maracujá",
+    "file": "maracuja.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Maracuj%C3%A1_em_fundo_preto_(2).JPG",
+    "artist": "Rodrigo.Argenton",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "food": "Maçã",
+    "file": "maca.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Red_Apple.jpg",
+    "artist": "Abhijit Tembhekar from Mumbai, India",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "food": "Melancia",
+    "file": "melancia.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Summer_99.jpg",
+    "artist": "Jack Keene from Oak Cliff, Texas, USA",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "food": "Melão",
+    "file": "melao.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Cucumis_melo_34.jpg",
+    "artist": "Wilfredor",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  {
+    "food": "Milho",
+    "file": "milho.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:GEM_corn.jpg",
+    "artist": "Keith Weller, USDA",
+    "license": "Public domain",
+    "license_url": ""
+  },
+  {
+    "food": "Milho de Pipoca 400g",
+    "file": "milho-de-pipoca-400g.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Grains_mais.jpg",
+    "artist": "KoS",
+    "license": "Public domain",
+    "license_url": ""
+  },
+  {
+    "food": "Moela",
+    "file": "moela.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Gizzard_of_Chicken.JPG",
+    "artist": "Bjferstern",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "food": "Morango",
+    "file": "morango.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Strawberries.JPG",
+    "artist": "",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "food": "Mostarda 180g",
+    "file": "mostarda-180g.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:FinnishKotisinappi.jpg",
+    "artist": "Abel111222",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "food": "Orégano 200g",
+    "file": "oregano-200g.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Origanum_vulgare_-_harilik_pune.jpg",
+    "artist": "Ivar Leidus",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "food": "Ovo",
+    "file": "ovo.webp",
+    "source_page": "https://www.rawpixel.com/image/3286595/free-photo-image-egg-cooking",
+    "artist": "",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "food": "Pepino",
+    "file": "pepino.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:ARS_cucumber.jpg",
+    "artist": "Stephen Ausmus, USDA ARS",
+    "license": "Public domain",
+    "license_url": ""
+  },
+  {
+    "food": "Pera",
+    "file": "pera.webp",
+    "source_page": "https://stocksnap.io/photo/pears-fruit-QIXV1AILYQ",
+    "artist": "Foodie Girl",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "food": "Pimentão",
+    "file": "pimentao.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Capsicum1.jpg",
+    "artist": "",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "food": "Polpa de Abacaxi",
+    "file": "polpa-de-abacaxi.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Ananas!.jpg",
+    "artist": "Deise Garrido",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "food": "Polpa de Abacaxi c/Hortelã",
+    "file": "polpa-de-abacaxi-chortela.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:2531Foods_cuisine_and_products_of_Bulacan_25.jpg",
+    "artist": "Judgefloro",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  {
+    "food": "Polpa de Acerola",
+    "file": "polpa-de-acerola.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Malpighia_emarginata_(in_Venezuela).JPG",
+    "artist": "Wilfredor",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "food": "Polpa de Açaí",
+    "file": "polpa-de-acai.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:A%C3%A7a%C3%AD.jpg",
+    "artist": "Gervásio Baptista/ABr",
+    "license": "CC BY 3.0 br",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/br/deed.en"
+  },
+  {
+    "food": "Polpa de Caju",
+    "file": "polpa-de-caju.webp",
+    "source_page": "https://www.flickr.com/photos/27435717@N00/52345817030",
+    "artist": "ali eminov",
+    "license": "BY-NC",
+    "license_url": "https://creativecommons.org/licenses/by-nc/2.0/"
+  },
+  {
+    "food": "Polpa de Cupuaçu",
+    "file": "polpa-de-cupuacu.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Cupuacu_fruit_opened.jpg",
+    "artist": "BjoernS",
+    "license": "CC BY-SA 2.0 de",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/de/deed.en"
+  },
+  {
+    "food": "Polpa de Goiaba",
+    "file": "polpa-de-goiaba.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Goiaba_vermelha.jpg",
+    "artist": "Rodrigo.Argenton",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "food": "Polpa de Laranja",
+    "file": "polpa-de-laranja.webp",
+    "source_page": "https://www.rawpixel.com/image/5970515/fresh-oranges-fruit",
+    "artist": "",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "food": "Polpa de Limão",
+    "file": "polpa-de-limao.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Lemon_-_whole_and_split.jpg",
+    "artist": "Ivar Leidus",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "food": "Polpa de Manga",
+    "file": "polpa-de-manga.webp",
+    "source_page": "https://www.rawpixel.com/image/6035201/photo-image-background-public-domain-leaf",
+    "artist": "",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "food": "Polpa de Maracujá",
+    "file": "polpa-de-maracuja.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Maracuj%C3%A1_em_fundo_preto_(2).JPG",
+    "artist": "Rodrigo.Argenton",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "food": "Polpa de Morango",
+    "file": "polpa-de-morango.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Strawberries.JPG",
+    "artist": "",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "food": "Polpa de Uva",
+    "file": "polpa-de-uva.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Riesling_grapes_leaves.jpg",
+    "artist": "No machine-readable author provided. T.o.m.~commonswiki assumed (based on copyright claims).",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "food": "Presunto 500g",
+    "file": "presunto-500g.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Jam%C3%B3n_de_Guijuelo_003.JPG",
+    "artist": "Valdavia",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "food": "Pão de Forma",
+    "file": "pao-de-forma.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Fresh_made_bread_06.jpg",
+    "artist": "FranHogan",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "food": "Pão de Forma Integral",
+    "file": "pao-de-forma-integral.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Fresh_made_bread_06.jpg",
+    "artist": "FranHogan",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "food": "Pão de Milho",
+    "file": "pao-de-milho.webp",
+    "source_page": "https://www.flickr.com/photos/7633518@N08/51547757696",
+    "artist": "sarahstierch",
+    "license": "BY",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/"
+  },
+  {
+    "food": "Queijo Mussarela 500g",
+    "file": "queijo-mussarela-500g.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Mozzarella_cheese.jpg",
+    "artist": "Jon Sullivan",
+    "license": "Public domain",
+    "license_url": ""
+  },
+  {
+    "food": "Queijo Prato 500g",
+    "file": "queijo-prato-500g.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Hartkaese_HardCheeses.jpg",
+    "artist": "Eva K. / Eva K.",
+    "license": "GFDL 1.2",
+    "license_url": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html"
+  },
+  {
+    "food": "Quiabo",
+    "file": "quiabo.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Hong_Kong_Okra_Aug_25_2012.JPG",
+    "artist": "Earth100",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "food": "Repolho",
+    "file": "repolho.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Cabbage.jpg",
+    "artist": "Bill Tarpenning",
+    "license": "Public domain",
+    "license_url": ""
+  },
+  {
+    "food": "Requeijão 200g",
+    "file": "requeijao-200g.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:RequeijaoCremoso.jpg",
+    "artist": "Tom B",
+    "license": "Public domain",
+    "license_url": ""
+  },
+  {
+    "food": "Sal",
+    "file": "sal.webp",
+    "source_page": "https://www.flickr.com/photos/16176711@N02/54461701417",
+    "artist": "conall..",
+    "license": "BY",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/"
+  },
+  {
+    "food": "Tangerina",
+    "file": "tangerina.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Mandarin_Oranges_(Citrus_Reticulata).jpg",
+    "artist": "Joe Ravi",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "food": "Tomate",
+    "file": "tomate.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Tomatoes-on-the-bush.jpg",
+    "artist": "",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "food": "Uva",
+    "file": "uva.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Riesling_grapes_leaves.jpg",
+    "artist": "No machine-readable author provided. T.o.m.~commonswiki assumed (based on copyright claims).",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "food": "Vagem",
+    "file": "vagem.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Cut_Green_Beans.jpg",
+    "artist": "M. Chambers (Mattysc at en.wikipedia)",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "food": "Vinagre",
+    "file": "vinagre.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Essig-1.jpg",
+    "artist": "No machine-readable author provided. Rainer Zenz assumed (based on copyright claims).",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "food": "Óleo",
+    "file": "oleo.webp",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Peanut_oil_bottle.jpg",
+    "artist": "Adam Engelhart",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  }
+]

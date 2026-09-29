@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="page-heading">
+  <div>
+    <h1>Auditoria</h1>
+    <p>Veja quem alterou os cadastros e as configurações.</p>
+  </div>
+</div>
+
+<form method="get" class="audit-filters" role="search">
+  <div class="audit-filter-field audit-filter-search">
+    <label for="audit-search">Buscar</label>
+    <input type="search" name="q" id="audit-search" value="{{ request.GET.q|default:'' }}" placeholder="Alteração, pessoa ou registro">
+  </div>
+  <div class="audit-filter-field">
+    <label for="audit-actor">Usuário</label>
+    <select name="actor" id="audit-actor">
+      <option value="">Todos</option>
+      <option value="system" {% if request.GET.actor == 'system' %}selected{% endif %}>Sistema</option>
+      {% for choice in actor_choices %}
+      <option value="{{ choice.actor_id }}" {% if request.GET.actor == choice.actor_id|stringformat:'s' %}selected{% endif %}>{{ choice.actor_name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="audit-filter-field">
+    <label for="audit-unit">Unidade</label>
+    <select name="unit" id="audit-unit">
+      <option value="">Todas</option>
+      {% if has_global_events %}<option value="global" {% if request.GET.unit == 'global' %}selected{% endif %}>Geral</option>{% endif %}
+      {% for choice in unit_choices %}
+      <option value="{{ choice.unit_id }}" {% if request.GET.unit == choice.unit_id|stringformat:'s' %}selected{% endif %}>{{ choice.unit__code }} — {{ choice.unit__name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="audit-filter-field">
+    <label for="audit-action">Ação</label>
+    <select name="action" id="audit-action">
+      <option value="">Todas</option>
+      {% for value, label in action_choices %}<option value="{{ value }}" {% if request.GET.action == value %}selected{% endif %}>{{ label }}</option>{% endfor %}
+    </select>
+  </div>
+  <div class="audit-filter-field">
+    <label for="audit-entity">Tipo de registro</label>
+    <select name="entity" id="audit-entity">
+      <option value="">Todos</option>
+      {% for value, label in entity_choices %}<option value="{{ value }}" {% if request.GET.entity == value %}selected{% endif %}>{{ label }}</option>{% endfor %}
+    </select>
+  </div>
+  <div class="audit-filter-field">
+    <label for="audit-date-from">Data inicial</label>
+    <input type="date" name="date_from" id="audit-date-from" value="{{ request.GET.date_from|default:'' }}">
+  </div>
+  <div class="audit-filter-field">
+    <label for="audit-date-to">Data final</label>
+    <input type="date" name="date_to" id="audit-date-to" value="{{ request.GET.date_to|default:'' }}">
+  </div>
+  <div class="audit-filter-actions">
+    <button class="button" type="submit">Filtrar</button>
+    {% if has_filters %}<a class="button secondary" href="{% url 'audit' %}">Limpar</a>{% endif %}
+  </div>
+</form>
+
+<p class="audit-result-count">{{ page.paginator.count }} registro{{ page.paginator.count|pluralize }} encontrado{{ page.paginator.count|pluralize }}</p>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Quando</th><th>Pessoa</th><th>Alteração</th><th>Unidade</th><th class="align-end">Ações</th></tr></thead>
+    <tbody>
+      {% for item in page %}
+      <tr><td class="nowrap">{{ item.created_at|date:"d/m/Y H:i" }}</td><td>{{ item.actor_name }}</td><td>{{ item.description }}</td><td>{{ item.unit.name|default:"Geral" }}</td><td class="align-end"><a href="{% url 'audit_detail' item.pk %}">Detalhes<span class="visually-hidden"> da alteração {{ item.pk }}</span></a></td></tr>
+      {% empty %}
+      <tr><td colspan="5"><div class="empty-state"><h2>Nenhuma alteração encontrada</h2><p>Tente remover ou mudar algum dos filtros.</p></div></td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% include 'partials/pagination.html' %}
+{% endblock %}

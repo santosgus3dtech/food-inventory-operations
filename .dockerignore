@@ -1,0 +1,14 @@
+.git
+.github
+.venv
+.local
+.env
+ref
+backups
+media
+staticfiles
+__pycache__
+*.pyc
+*.log
+test-results
+playwright-report

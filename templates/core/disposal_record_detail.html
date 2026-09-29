@@ -1,0 +1,9 @@
+{% extends 'base.html' %}{% block content %}
+<div class="page-heading"><div><a class="back-link" href="{% url 'disposal_records' %}">← Voltar</a><h1>Descarte de {{ record.occurred_on|date:"d/m/Y" }}</h1><p>{{ record.unit.code }} — {{ record.unit.name }}</p></div></div>
+<section class="disposal-detail">
+  <div class="disposal-detail-meta"><div><span>Unidade</span><strong>{{ record.unit.code }} — {{ record.unit.name }}</strong></div><div><span>Registrado por</span><strong>{{ record.created_by.display_name }}</strong></div><div><span>Enviado em</span><strong>{{ record.created_at|date:"d/m/Y H:i" }}</strong></div></div>
+  <div class="disposal-observation"><span>Observação</span><p>{{ record.observation|linebreaksbr }}</p></div>
+  <h2>Fotos do descarte</h2>
+  <div class="disposal-photo-grid">{% for photo in record.photos.all %}<a href="{% url 'disposal_photo' record.pk photo.pk %}" target="_blank" rel="noopener"><img src="{% url 'disposal_photo' record.pk photo.pk %}" alt="Foto {{ forloop.counter }} do descarte" loading="lazy"><span>Foto {{ forloop.counter }} · {{ photo.width }} × {{ photo.height }}</span></a>{% endfor %}</div>
+</section>
+{% endblock %}

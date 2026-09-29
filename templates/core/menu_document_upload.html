@@ -1,0 +1,10 @@
+{% extends 'base.html' %}{% block content %}
+<div class="page-heading"><div><a class="back-link" href="{% url 'menu_documents' %}">← Voltar</a><h1>Enviar cardápio</h1><p>Adicione um ou vários PDFs para guardar o documento e extrair as refeições da semana.</p></div></div>
+<form method="post" enctype="multipart/form-data" class="record-form upload-form" novalidate>{% csrf_token %}
+  {% if form.non_field_errors %}<div class="notice error" role="alert">{{ form.non_field_errors }}</div>{% endif %}
+  <div class="upload-callout"><span class="upload-symbol">PDF</span><div><strong>Selecione até 20 cardápios</strong><p>O sistema identifica período, dias e refeições quando o PDF segue uma estrutura de tabela. Arquivos com outro formato ficam guardados para conferência.</p></div></div>
+  <div class="field"><label for="{{ form.menu_files.id_for_label }}">{{ form.menu_files.label }} <span aria-hidden="true">*</span></label>{{ form.menu_files }}{% if form.menu_files.help_text %}<div class="help-text">{{ form.menu_files.help_text }}</div>{% endif %}{% if form.menu_files.errors %}<div class="field-errors" role="alert">{{ form.menu_files.errors }}</div>{% endif %}</div>
+  <div class="notice"><strong>Como a leitura funciona?</strong><p>O PDF original é preservado. Quando a tabela é reconhecida, as cinco referências diárias aparecem organizadas por semana. Nenhum saldo de estoque é alterado.</p></div>
+  <div class="form-actions"><button class="button primary" type="submit">Enviar e processar</button><a class="button secondary" href="{% url 'menu_documents' %}">Cancelar</a></div>
+</form>
+{% endblock %}
