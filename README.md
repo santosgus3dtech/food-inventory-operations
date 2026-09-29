@@ -12,6 +12,15 @@ The interface is intentionally written in Brazilian Portuguese for its target op
 repository is a sanitized portfolio edition: it contains no real organization name, users,
 addresses, invoices, credentials, production domain, database or private documents.
 
+## Screenshots
+
+![FoodOps operational dashboard with synthetic portfolio data](docs/screenshots/dashboard.png)
+
+![FoodOps unit inventory with synthetic foods and quantities](docs/screenshots/inventory.png)
+
+The screenshots were generated from an isolated local database containing only synthetic units,
+foods, quantities and users.
+
 ## Product scope
 
 - Multi-site inventory with categories, foods, packages and minimum stock levels.
