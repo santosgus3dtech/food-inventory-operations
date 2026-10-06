@@ -7,7 +7,6 @@ from django.db import transaction
 from core.models import Category, Food, Presentation, StockMovement, Unit, UnitFood, User
 from core.stock_services import create_stock_movement
 
-
 CATALOG = (
     ("Cereais", "ARROZ", "Arroz integral", Food.Measure.KG, "Pacote de 5 kg", Decimal("5")),
     ("Cereais", "FEIJAO", "Feijão carioca", Food.Measure.KG, "Pacote de 1 kg", Decimal("1")),
