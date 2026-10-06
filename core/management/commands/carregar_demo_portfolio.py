@@ -28,7 +28,9 @@ class Command(BaseCommand):
         if not settings.DEBUG or not local_database:
             raise CommandError("O cenário de portfólio só pode ser criado no ambiente local DEBUG.")
         if Unit.objects.exists():
-            raise CommandError("Já existem unidades. Use um banco local vazio para não misturar dados.")
+            raise CommandError(
+                "Já existem unidades. Use um banco local vazio para não misturar dados."
+            )
         actor = User.objects.filter(is_active=True, is_general_admin=True).first()
         if actor is None:
             raise CommandError("Crie primeiro o administrador local com: manage.py preparar_local")
@@ -57,7 +59,13 @@ class Command(BaseCommand):
                     quantity = Decimal(18 + unit_index * 4 + food_index * 3)
                     if food.base_unit == Food.Measure.UNIT:
                         quantity = Decimal(90 + unit_index * 30)
-                    receipt_lines.append({"food": food, "quantity": quantity, "lot_code": f"DEMO-{unit_index + 1}-{food_index + 1}"})
+                    receipt_lines.append(
+                        {
+                            "food": food,
+                            "quantity": quantity,
+                            "lot_code": f"DEMO-{unit_index + 1}-{food_index + 1}",
+                        }
+                    )
                 create_stock_movement(
                     unit=unit,
                     kind=StockMovement.Kind.RECEIPT,
