@@ -96,6 +96,15 @@ administrator credential under `.local/`; both locations are ignored by Git.
 No production or client data is included. Create sample units and foods through the application
 before exercising the workflows.
 
+For a complete fictional scenario with three units, five foods, minimum-stock thresholds and an
+auditable receipt/consumption history, run:
+
+```powershell
+uv run python manage.py carregar_demo_portfolio
+```
+
+Follow [`docs/DEMO_WALKTHROUGH.md`](docs/DEMO_WALKTHROUGH.md) for the recruiter-oriented flow.
+
 ## Quality checks
 
 ```powershell
