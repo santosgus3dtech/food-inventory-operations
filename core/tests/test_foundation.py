@@ -1563,7 +1563,7 @@ class DisposalRecordTests(TestCase):
         self.client.force_login(self.employee, backend="django.contrib.auth.backends.ModelBackend")
         response = self.client.get(reverse("disposal_record_create"))
         self.assertEqual(response.context["form"]["occurred_on"].value(), timezone.localdate())
-        self.assertContains(response, 'value="2026-09-29"')
+        self.assertContains(response, f'value="{timezone.localdate().isoformat()}"')
 
 
 class LoginRateLimitTests(TestCase):
