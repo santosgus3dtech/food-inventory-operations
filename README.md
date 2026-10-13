@@ -1,5 +1,7 @@
 # Food Inventory Operations
 
+🇧🇷 [Leia este README em Português (Brasil)](README.pt-BR.md).
+
 [![CI](https://github.com/santosgus3dtech/food-inventory-operations/actions/workflows/checks.yml/badge.svg)](https://github.com/santosgus3dtech/food-inventory-operations/actions/workflows/checks.yml)
 [![Django 5.2](https://img.shields.io/badge/Django-5.2-0C4B33?logo=django&logoColor=white)](https://www.djangoproject.com/)
 [![PostgreSQL 17](https://img.shields.io/badge/PostgreSQL-17-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
