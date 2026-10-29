@@ -23,3 +23,7 @@ desktop.ini
 /*.pdf
 /*.ogg
 /private-data/
+
+# Metadados locais do cofre documental
+/docs/.obsidian/
+/docs/.trash/
